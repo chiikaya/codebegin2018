@@ -1,0 +1,58 @@
+﻿body 
+{
+ background-color:#99d9ea;
+ font-size:18px;
+ color:#333; 
+ font-family: Simsun;
+ line-height:15px;
+}
+.buttoncontrol
+{
+  font-size:15px;
+  width:60px;
+  height:35px;  
+  margin-left:10px;
+  margin-right:10px;  
+}
+
+.widbuttoncontrol
+{
+  font-size:15px;
+  width:80px;
+  height:35px; 
+  margin-left:10px;
+  margin-right:10px;   
+}
+.widwidbuttoncontrol
+{
+  font-size:15px;
+  width:150px;
+  height:35px; 
+  margin-left:10px;
+  margin-right:10px;   
+}
+.textboxControl
+{
+  font-size:15px;
+  width:190px;
+  height:35px;   
+  margin-left:10px;
+  margin-right:10px;  
+ }
+.leftTab
+{
+  text-align:right;  
+  margin-right:10px;
+  height:40px;
+ }
+ .rightTab
+ {
+  text-align:left;  
+  margin-left:10px;
+  padding-left:10px;
+  height:40px;
+  }
+  table
+  {
+   height:35px;   
+   }

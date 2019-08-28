@@ -1,0 +1,133 @@
+<html>
+<head>
+<title>无限级折叠菜单JS版</title>
+<style> 
+<!--
+body,ul,h3 {margin:0px; padding:0px;}
+li {list-style-type:none;}
+body{
+background-color:#99d9ea;
+ font-size:18px;
+ color:#333; 
+ font-family: Simsun;
+ line-height:15px;
+ }
+a{text-decoration:none;color:#004285;border:none;}
+a:hover{text-decoration:none;color:#C33;}
+#menu {
+ width:260px;
+ margin:50px auto; 
+ padding:10px; 
+ border:#EEE 0px solid;
+
+ }
+ #menu h3 {
+ font-size:20px;
+ }
+ #menu ul { 
+ background:url("img/ul-bg.gif") repeat-y 5px 0px; overflow:hidden;
+ }
+ #menu ul li {
+ padding:5px 0 2px 15px; 
+ background:url("img/tree-ul-li.gif") no-repeat 5px -32px; 
+ }
+ #menu ul li ul {display:none;}
+ #menu ul li em {
+ cursor:pointer;
+ display:inline-block;
+ width:15px;
+ float:left;
+ height:15px;
+ margin-left:-14px;
+ background:url("img/tree-ul-li.gif") no-repeat -32px 2px;
+
+ }
+ #menu ul li em.off {
+ background-position: -17px -18px;
+
+ }
+ #menu ul li#end {
+
+background-color:#99d9ea;
+
+ }
+ #menu ul.off { 
+ display:block;
+
+ }
+-->
+</style>
+</head>
+<body>
+<div id="menu">
+ <h3>学生用户模块</h3>
+
+  <ul>
+   <li><em></em><a href='javascript:void(0);'>个人信息管理</a>
+   <ul>
+   <li><a href='s_StudentBaseInfo.aspx' target="right">查看个人基本信息</a></li>
+   <li><a href='s_EducationInfo.aspx' target="right">查看个人教育信息</a></li>
+   <li><a href='s_LookRoomInfo.aspx' target="right">查看个人住宿信息</a></li>
+   <li ><a href='javascript:void(0);'>修改个人信息</a></li>
+   <li id='end'><a href='javascript:void(0);'>修改密码</a></li>
+   </ul>
+   </li>
+   <li><em></em><a href='javascript:void(0);'>个人请销假管理</a>
+   <ul>
+   <li><a href='s_AskLeaveAdd.aspx' target="right">请假</a></li>
+   <li><a href='s_ReturnAskLeave.aspx' target="right">销假</a></li>
+   <li><a href='s_CheckAskLeave.aspx' target="right">查看请假条审批状态</a></li>
+   <li id='end'><a href='javascript:void(0);'>查看历史请假信息</a></li>
+   </ul>
+   </li>
+
+   <li id='end'><em></em><a href='javascript:void(0);'>站内短信息管理</a>
+   <ul>
+   <li><a href='javascript:void(0);'>查看新消息</a></li>
+   <li ><a href='javascript:void(0);'>查看历史消息</a></li>
+   <li><a href='javascript:void(0);'>发送消息</a></li>
+   <li id='end'><a href='javascript:void(0);'>群发消息</a></li>
+   </ul>
+   </li>
+
+
+
+  </ul>
+  </li>
+
+  </ul>
+  </li>
+
+ </ul>
+ </li>
+
+ </ul>
+</div>
+<script type="text/javascript"> 
+(function(e){
+ for(var _obj=document.getElementById(e.id).getElementsByTagName(e.tag),i=-1,em;em=_obj[++i];){
+ em.onclick = function(){ //onmouseover
+  var ul = this.nextSibling;
+  if(!ul){return false;}
+  ul = ul.nextSibling; if(!ul){return false;} 
+  if(e.tag != 'a'){ ul = ul.nextSibling; if(!ul){return false;} } //a 标签控制 隐藏或删除该行
+  for(var _li=this.parentNode.parentNode.childNodes,n=-1,li;li=_li[++n];){
+  if(li.tagName=="LI"){
+   for(var _ul=li.childNodes,t=-1,$ul;$ul=_ul[++t];){
+   switch($ul.tagName){
+   case "UL":
+    $ul.className = $ul!=ul?"" : ul.className?"":"off";
+   break;
+   case "EM":
+    $ul.className = $ul!=this?"" : this.className?"":"off";
+   break;
+   }
+   }
+  }
+  }
+ }
+ }
+})({id:'menu',tag:'em'});
+</script>
+</body>
+</html>

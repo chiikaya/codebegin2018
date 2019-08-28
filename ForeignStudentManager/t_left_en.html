@@ -1,0 +1,154 @@
+﻿<html>
+<head>
+<title>Teacher User Module</title>
+<style> 
+<!--
+body,ul,h3 {margin:0px; padding:0px;}
+li {list-style-type:none;}
+body{
+background-color:#99d9ea;
+ font-size:12px;
+ color:#333; 
+ font-family: Simsun;
+ line-height:15px;
+ }
+a{text-decoration:none;color:#004285;border:none;}
+a:hover{text-decoration:none;color:#C33;}
+#menu {
+ width:260px;
+ margin:50px auto; 
+ padding:10px; 
+ border:#EEE 0px solid;
+
+ }
+ #menu h3 {
+ font-size:20px;
+ }
+ #menu ul { 
+ background:url("img/ul-bg.gif") repeat-y 5px 0px; overflow:hidden;
+ }
+ #menu ul li {
+ padding:5px 0 2px 15px; 
+ background:url("img/tree-ul-li.gif") no-repeat 5px -32px; 
+ }
+ #menu ul li ul {display:none;}
+ #menu ul li em {
+ cursor:pointer;
+ display:inline-block;
+ width:15px;
+ float:left;
+ height:15px;
+ margin-left:-14px;
+ background:url("img/tree-ul-li.gif") no-repeat -32px 2px;
+
+ }
+ #menu ul li em.off {
+ background-position: -17px -18px;
+
+ }
+ #menu ul li#end {
+
+background-color:#99d9ea;
+
+ }
+ #menu ul.off { 
+ display:block;
+
+ }
+-->
+</style>
+</head>
+<body>
+<div id="menu">
+ <h3>College Staff Module</h3>
+
+  <ul>
+   <li><em></em><a href='javascript:void(0);'>User Information</a>
+   <ul>
+   <li><a href='t_TeacherManage.aspx' target="right">View User Infomation</a></li>
+   <li ><a href='javascript:void(0);'>Update User Information</a></li>
+   <li id='end'><a href='javascript:void(0);'>Update Password</a></li>
+   </ul>
+   </li>
+   <li><em></em><a href='javascript:void(0);'>View Student Informaiont</a>
+   <ul>
+   <li><a href='t_QUeryStudentBaseInfo.aspx' target="right">Student Basic Information</a></li>
+   <li><a href='t_SelectStudentMajorInfo.aspx' target="right">Student Major Infortion</a></li>
+   <li><a href='t_StudentBaseInfo.aspx' target="right">Search Student</a></li>
+   <li><a href='t_SelectMultiStudentInfo.aspx' target="right">Multiple Query Student Information</a></li>
+   <li><a href='t_singleStudentInfo.aspx' target="right">Show Details Information</a></li>
+   <li id='end'><a href='t_GroupStaticStudentInfo.aspx' target="right">Grouped Statistical Query</a></li>
+   </ul>
+   </li>
+
+   <li><em></em><a href='javascript:void(0);'>Approval Process Module</a>
+   <ul>
+   <li><a href='t_CheckStudentAskLeave.aspx' target="right">Pending Approval</a></li>
+   <li><a href='t_MyCheckedAskLeave.aspx' target="right">Approved Leave</a></li>
+   <li><a href='t_SelectOnHolidayStudents.aspx' target="right">Query Student on Leave</a></li>
+   <li><a href='t_OverTimeNotReturnStudent.aspx' target="right">Show Student Overdue Students</a></li>
+   <li id='end'><a href='javascript:void(0);' target="right">Group Statistical Students on Leave</a></li>
+   </ul>
+   </li>
+   
+    <li><em></em><a href='javascript:void(0);'>Overseas Students Security Early-warning Module</a>
+   <ul>
+   <li><a href='t_CheckStudentAskLeave.aspx' target="right">Personal Safety Early-warning</a></li>
+   <li><a href='t_MyCheckedAskLeave.aspx' target="right">Academic Security</a></li>
+   <li><a href='t_SelectOnHolidayStudents.aspx' target="right">Scientific Research Activities and National Security</a></li>
+   <li><a href='t_OverTimeNotReturnStudent.aspx' target="right">Social Activities Monitor</a></li>
+   <li id='Li1'><a href='javascript:void(0);' target="right">International Hot Spot Information Tracking</a></li>
+   </ul>
+   </li>
+
+
+   <li id='end'><em></em><a href='javascript:void(0);'>Message Management</a>
+   <ul>
+   <li><a href='javascript:void(0);'>new messages</a></li>
+   <li ><a href='javascript:void(0);'>history messages</a></li>
+   <li><a href='javascript:void(0);'>send messages</a></li>
+   <li id='end'><a href='javascript:void(0);'>group messages</a></li>
+   </ul>
+   </li>
+
+
+
+  </ul>
+  </li>
+
+  </ul>
+  </li>
+
+ </ul>
+ </li>
+
+ </ul>
+</div>
+<script type="text/javascript">
+    (function (e) {
+        for (var _obj = document.getElementById(e.id).getElementsByTagName(e.tag), i = -1, em; em = _obj[++i]; ) {
+            em.onclick = function () { //onmouseover
+                var ul = this.nextSibling;
+                if (!ul) { return false; }
+                ul = ul.nextSibling; if (!ul) { return false; }
+                if (e.tag != 'a') { ul = ul.nextSibling; if (!ul) { return false; } } //a 标签控制 隐藏或删除该行
+                for (var _li = this.parentNode.parentNode.childNodes, n = -1, li; li = _li[++n]; ) {
+                    if (li.tagName == "LI") {
+                        for (var _ul = li.childNodes, t = -1, $ul; $ul = _ul[++t]; ) {
+                            switch ($ul.tagName) {
+                                case "UL":
+                                    $ul.className = $ul != ul ? "" : ul.className ? "" : "off";
+                                    break;
+                                case "EM":
+                                    $ul.className = $ul != this ? "" : this.className ? "" : "off";
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })({ id: 'menu', tag: 'em' });
+</script>
+</body>
+</html>

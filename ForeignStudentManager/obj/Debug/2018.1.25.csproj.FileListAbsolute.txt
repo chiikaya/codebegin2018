@@ -1,0 +1,8 @@
+C:\Users\user\Desktop\2018.1.25\ForeignStudentManager\bin\ForeignStudentManager.dll
+C:\Users\user\Desktop\2018.1.25\ForeignStudentManager\bin\ForeignStudentManager.pdb
+C:\Users\user\Desktop\2018.1.25\ForeignStudentManager\obj\Debug\ForeignStudentManager.dll
+C:\Users\user\Desktop\2018.1.25\ForeignStudentManager\obj\Debug\ForeignStudentManager.pdb
+C:\Users\user\Desktop\ForeignStudentManager\ForeignStudentManager\bin\ForeignStudentManager.dll
+C:\Users\user\Desktop\ForeignStudentManager\ForeignStudentManager\bin\ForeignStudentManager.pdb
+C:\Users\user\Desktop\ForeignStudentManager\ForeignStudentManager\obj\Debug\ForeignStudentManager.dll
+C:\Users\user\Desktop\ForeignStudentManager\ForeignStudentManager\obj\Debug\ForeignStudentManager.pdb

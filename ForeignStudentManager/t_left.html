@@ -1,0 +1,153 @@
+﻿<html>
+<head>
+<title>教师用户模块</title>
+<style> 
+<!--
+body,ul,h3 {margin:0px; padding:0px;}
+li {list-style-type:none;}
+body{
+background-color:#99d9ea;
+ font-size:12px;
+ color:#333; 
+ font-family: Simsun;
+ line-height:15px;
+ }
+a{text-decoration:none;color:#004285;border:none;}
+a:hover{text-decoration:none;color:#C33;}
+#menu {
+ width:260px;
+ margin:50px auto; 
+ padding:10px; 
+ border:#EEE 0px solid;
+
+ }
+ #menu h3 {
+ font-size:20px;
+ }
+ #menu ul { 
+ background:url("img/ul-bg.gif") repeat-y 5px 0px; overflow:hidden;
+ }
+ #menu ul li {
+ padding:5px 0 2px 15px; 
+ background:url("img/tree-ul-li.gif") no-repeat 5px -32px; 
+ }
+ #menu ul li ul {display:none;}
+ #menu ul li em {
+ cursor:pointer;
+ display:inline-block;
+ width:15px;
+ float:left;
+ height:15px;
+ margin-left:-14px;
+ background:url("img/tree-ul-li.gif") no-repeat -32px 2px;
+
+ }
+ #menu ul li em.off {
+ background-position: -17px -18px;
+
+ }
+ #menu ul li#end {
+
+background-color:#99d9ea;
+
+ }
+ #menu ul.off { 
+ display:block;
+
+ }
+-->
+</style>
+</head>
+<body>
+<div id="menu">
+ <h3>学院管理人员模块</h3>
+
+  <ul>
+   <li><em></em><a href='javascript:void(0);'>用户信息管理</a>
+   <ul>
+   <li><a href='t_TeacherManage.aspx' target="right">查看用户信息</a></li>
+   <li ><a href='javascript:void(0);'>修改用户信息</a></li>
+   <li id='end'><a href='javascript:void(0);'>修改密码</a></li>
+   </ul>
+   </li>
+   <li><em></em><a href='javascript:void(0);'>查询学生信息</a>
+   <ul>
+   <li><a href='t_QUeryStudentBaseInfo.aspx' target="right">查询学生基本信息</a></li>
+   <li><a href='t_SelectStudentMajorInfo.aspx' target="right">查询学生专业信息</a></li>
+   <li><a href='t_StudentBaseInfo.aspx' target="right">查找学生</a></li>
+   <li><a href='t_SelectMultiStudentInfo.aspx' target="right">学生信息综合查询</a></li>
+   <li><a href='t_singleStudentInfo.aspx' target="right">学生信息详细显示</a></li>
+   <li id='end'><a href='t_GroupStaticStudentInfo.aspx' target="right">分组统计查询</a></li>
+   </ul>
+   </li>
+
+   <li><em></em><a href='javascript:void(0);'>请假条审批管理模块</a>
+   <ul>
+   <li><a href='t_CheckStudentAskLeave.aspx' target="right">未审批请假条</a></li>
+   <li><a href='t_MyCheckedAskLeave.aspx' target="right">已审批请假条</a></li>
+   <li><a href='t_SelectOnHolidayStudents.aspx' target="right">休假学生查询</a></li>
+   <li><a href='t_OverTimeNotReturnStudent.aspx' target="right">超期未归校学生显示</a></li>
+   <li id='end'><a href='javascript:void(0);' target="right">学生休假分组统计</a></li>
+   </ul>
+   </li>
+
+   <li><em></em><a href='javascript:void(0);'>留学生安全预警模块</a>
+   <ul>
+   <li><a href='t_CheckStudentAskLeave.aspx' target="right">留学生人身安全预警</a></li>
+   <li><a href='t_OverTimeNotReturnStudent.aspx' target="right">留学生学业安全预警</a></li>
+   <li><a href='t_MyCheckedAskLeave.aspx' target="right">留学生科研活动预警</a></li>
+   <li><a href='t_SelectOnHolidayStudents.aspx' target="right">留学生社会活动预警</a></li>
+   <li id='end'><a href='javascript:void(0);' target="right">国际热点信息追踪</a></li>
+   </ul>
+   </li>
+
+   <li id='end'><em></em><a href='javascript:void(0);'>站内短信息管理</a>
+   <ul>
+   <li><a href='javascript:void(0);'>查看新消息</a></li>
+   <li ><a href='javascript:void(0);'>查看历史消息</a></li>
+   <li><a href='javascript:void(0);'>发送消息</a></li>
+   <li id='end'><a href='javascript:void(0);'>群发消息</a></li>
+   </ul>
+   </li>
+
+
+
+  </ul>
+  </li>
+
+  </ul>
+  </li>
+
+ </ul>
+ </li>
+
+ </ul>
+</div>
+<script type="text/javascript">
+    (function (e) {
+        for (var _obj = document.getElementById(e.id).getElementsByTagName(e.tag), i = -1, em; em = _obj[++i]; ) {
+            em.onclick = function () { //onmouseover
+                var ul = this.nextSibling;
+                if (!ul) { return false; }
+                ul = ul.nextSibling; if (!ul) { return false; }
+                if (e.tag != 'a') { ul = ul.nextSibling; if (!ul) { return false; } } //a 标签控制 隐藏或删除该行
+                for (var _li = this.parentNode.parentNode.childNodes, n = -1, li; li = _li[++n]; ) {
+                    if (li.tagName == "LI") {
+                        for (var _ul = li.childNodes, t = -1, $ul; $ul = _ul[++t]; ) {
+                            switch ($ul.tagName) {
+                                case "UL":
+                                    $ul.className = $ul != ul ? "" : ul.className ? "" : "off";
+                                    break;
+                                case "EM":
+                                    $ul.className = $ul != this ? "" : this.className ? "" : "off";
+                                    break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    })({ id: 'menu', tag: 'em' });
+</script>
+</body>
+</html>
